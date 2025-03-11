@@ -4,7 +4,6 @@
 
 // Initialize display
 #if defined(JC3248W535C)
-//#define GFX_DEV_DEVICE JC3248W535
 #define GFX_BL 1
 Arduino_DataBus *bus = new Arduino_ESP32QSPI(
     45 /* CS */, 47 /* SCK */, 21 /* D0 */, 48 /* D1 */, 40 /* D2 */, 39 /* D3 */);
@@ -13,7 +12,6 @@ Arduino_GFX *g = new Arduino_AXS15231B(bus, GFX_NOT_DEFINED /* RST */, 0 /* rota
 Arduino_Canvas *gfx = new Arduino_Canvas(320 /* width */, 480 /* height */, g, 0 /* output_x */, 0 /* output_y */, 0 /* rotation */);
 
 #elif defined(ESP32_8048S043C)
-//#define GFX_DEV_DEVICE ESP32_8048S043
 #define GFX_BL 2
 #define RGB_PANEL
 Arduino_ESP32RGBPanel *rgbpanel = new Arduino_ESP32RGBPanel(
@@ -28,7 +26,6 @@ Arduino_RGB_Display *gfx = new Arduino_RGB_Display(
     800 /* width */, 480 /* height */, rgbpanel, 0 /* rotation */, true /* auto_flush */);
 
 #elif defined(JC8048W550C)
-//#define GFX_DEV_DEVICE JC8048W550
 #define GFX_BL 2
 #define RGB_PANEL
 Arduino_ESP32RGBPanel *rgbpanel = new Arduino_ESP32RGBPanel(
